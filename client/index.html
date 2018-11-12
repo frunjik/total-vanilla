@@ -4,27 +4,24 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Workbench 0.001 - Native</title>
+	<title>Workbench - Native</title>
 	<style>
 		body { font-family: Tahoma, Verdana, Segoe, sans-serif; } 
-		div { background-color: green; }
-		textarea { width: 100%; height: 640px; }
-
+		edit-file {
+			width: 100%;
+			height: 720px;
+		}
 	</style>
+	<script src="https://ace.c9.io/build/src/ace.js"></script>
 	<script type="module">
-		import './index.js';
-		import { FileSystem } from './fs.js';
-		import { HttpClient } from './http.js';
-		const fs = new HttpClient();
-		fs.get('client/index.html', s => {document.querySelector('textarea').value = s});
+	import './edit-file.js';
+	import './edit-string.js';
 	</script>
 </head>
 <body>
-	<h3>Workbench! v0.0003 - Native</h3>
-	<app-component>	</app-component>
-
-<textarea>
-TEST
-</textarea>
+	<div style="display: flex; flex-direction: column">
+		<h3>Workbench v0.001 - Native</h3>
+		<edit-file></edit-file>
+	</div>
 </body>
 </html>
