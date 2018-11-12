@@ -7,6 +7,15 @@ function div100(...children) {
 	return result;
 }
 
+function row(flex, ...children) {
+	const result = div(...children);
+	result.style.display = "flex";
+	flex.split('').forEach((f, i) => {
+		children[i].style.flex = 0 + f;
+	});
+	return result;
+}
+
 class EditFileElement extends HTMLElement {
 
 	constructor() {
@@ -18,11 +27,13 @@ class EditFileElement extends HTMLElement {
 
 		this.appendChild(
 			div100(
+				row('191', 
 				button('Load', () => this.load()), 
 				this.filename, 
 				button('Save', () => this.save()),
+				),
 				this.editor,
-			),
+			)
 		);
 
 		this.load();
