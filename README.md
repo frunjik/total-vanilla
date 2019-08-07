@@ -1,5 +1,5 @@
-# total-poly
-Playground with polymer and total.js
+# total-vanilla
+Playground with vanilla-js and total.js
 
 - start server
 ```
@@ -9,11 +9,7 @@ node debug.js
 
 - start client
 ```
+cd client
+http-server
 localhost:8000/index.html
-```
-
-
-- optional (dev reload - requires browser-sync)
-```
-browser-sync start --proxy 'localhost:8000' --serveStatic '.' --files '.'
 ```
